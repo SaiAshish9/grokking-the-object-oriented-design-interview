@@ -465,11 +465,13 @@ class ParkingLot:
 
         # cars can be parked at compact or large spots
         if type == VehicleType.Car:
-            return (self.__compact_spot_count + self.__large_spot_count) >= (self.__max_compact_count + self.__max_large_count)
+            return (self.__compact_spot_count + self.__large_spot_count) >= 
+            (self.__max_compact_count + self.__max_large_count)
 
         # electric car can be parked at compact, large or electric spots
-        return (self.__compact_spot_count + self.__large_spot_count + self.__electric_spot_count) >= (self.__max_compact_count + self.__max_large_count
-                                                                                                  + self.__max_electric_count)
+        return (self.__compact_spot_count + self.__large_spot_count + self.__electric_spot_count)
+        >= (self.__max_compact_count + self.__max_large_count
+        + self.__max_electric_count)
 
     # increment the parking spot count based on the vehicle type
     def increment_spot_count(self, type):
