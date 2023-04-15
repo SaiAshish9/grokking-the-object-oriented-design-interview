@@ -147,12 +147,6 @@ from datetime import datetime
 from .constants import AccountStatus
 from .profile import Profile
 
-
-# For simplicity, we are not defining getter and setter functions. The reader can
-# assume that all class attributes are private and accessed through their respective
-# public getter methods and modified only through their public methods function.
-
-
 class Account:
     def __init__(self, id, password, status=AccountStatus.Active):
         self.__id = id
