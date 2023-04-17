@@ -117,19 +117,23 @@ from enum import Enum
 
 
 class FlightStatus(Enum):
-    ACTIVE, SCHEDULED, DELAYED, DEPARTED, LANDED, IN_AIR, ARRIVED, CANCELLED, DIVERTED, UNKNOWN = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    ACTIVE, SCHEDULED, DELAYED, DEPARTED, LANDED, IN_AIR, ARRIVED, 
+    CANCELLED, DIVERTED, UNKNOWN = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 class PaymentStatus(Enum):
-    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, 
+    SETTLING, SETTLED, REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 class ReservationStatus(Enum):
-    REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CANCELLED, ABANDONED = 1, 2, 3, 4, 5, 6
+    REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CANCELLED, 
+    ABANDONED = 1, 2, 3, 4, 5, 6
 
 
 class SeatClass(Enum):
-    ECONOMY, ECONOMY_PLUS, PREFERRED_ECONOMY, BUSINESS, FIRST_CLASS = 1, 2, 3, 4, 5
+    ECONOMY, ECONOMY_PLUS, PREFERRED_ECONOMY, BUSINESS, 
+    FIRST_CLASS = 1, 2, 3, 4, 5
 
 
 class SeatType(Enum):
@@ -156,11 +160,6 @@ class Address:
 ```python
 from abc import ABC
 from .constants import *
-
-
-# For simplicity, we are not defining getter and setter functions. The reader can
-# assume that all class attributes are private and accessed through their respective
-# public getter methods and modified only through their public methods function.
 
 class Account:
     def __init__(self, id, password, status=AccountStatus.Active):
@@ -201,8 +200,6 @@ class Passenger:
 
 ```
 
-**Airport, Aircraft, Seat and FlightSeat:** These classes represent the top-level classes of the system:
-
 ```python
 class Airport:
     def __init__(self, name, address, code):
@@ -241,8 +238,6 @@ class FlightSeat(Seat):
 
 
 ```
-
-**Flight Schedule classes, Flight, FlightInstance, FlightReservation, Itinerary:** Here are the classes related to flights and reservations:
 
 ```python
 class WeeklySchedule:
@@ -314,7 +309,5 @@ class Itinerary:
 
     def make_payment(self):
         None
-
-
 ```
 
