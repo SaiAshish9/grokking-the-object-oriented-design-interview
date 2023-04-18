@@ -129,7 +129,8 @@ from enum import Enum
 
 
 class ReservationStatus(Enum):
-    REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CANCELED, ABANDONED = 1, 2, 3, 4, 5, 6
+    REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CANCELED, 
+    ABANDONED = 1, 2, 3, 4, 5, 6
 
 
 class SeatType(Enum):
@@ -149,7 +150,8 @@ class AccountStatus(Enum):
 
 
 class PaymentStatus(Enum):
-    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, 
+    REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 class Address:
@@ -168,12 +170,6 @@ class Address:
 from abc import ABC
 from datetime import datetime
 from .constants import *
-
-
-# For simplicity, we are not defining getter and setter functions. The reader can
-# assume that all class attributes are private and accessed through their respective
-# public getter methods and modified only through their public methods function.
-
 
 class Account:
     def __init__(self, id, password, address, status=AccountStatus.Active):
