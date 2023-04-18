@@ -147,7 +147,8 @@ class AccountStatus(Enum):
 
 
 class PaymentStatus(Enum):
-    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, 
+    REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 class Address:
@@ -173,12 +174,6 @@ class Person():
 ```python
 from abc import ABC
 from .constants import AccountStatus
-
-
-# For simplicity, we are not defining getter and setter functions. The reader can
-# assume that all class attributes are private and accessed through their respective
-# public getter methods and modified only through their public methods function.
-
 
 class Account(ABC):
     def __init__(self, id, password, person, status=AccountStatus.NONE):
@@ -214,8 +209,6 @@ class AdditionalDriver:
 
 ```
 
-**CarRentalSystem and CarRentalLocation:** These classes represent the top level classes:
-
 ```python
 class CarRentalLocation:
     def __init__(self, name, address):
@@ -235,8 +228,6 @@ class CarRentalSystem:
         None
 
 ```
-
-**Vehicle, VehicleLog, and VehicleReservation:** To encapsulate a vehicle, log, and reservation. The VehicleReservation class will be responsible for processing the reservation and return of a vehicle:
 
 ```python
 from abc import ABC
@@ -317,7 +308,6 @@ class VehicleReservation:
         self.__return_date = datetime.date.today()
         self.__pickup_location_name = ""
         self.__return_location_name = ""
-
         self.__customer_id = 0
         self.__vehicle = None
         self.__bill = None
