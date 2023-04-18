@@ -128,11 +128,13 @@ class RoomStyle(Enum):
 
 
 class RoomStatus(Enum):
-    AVAILABLE, RESERVED, OCCUPIED, NOT_AVAILABLE, BEING_SERVICED, OTHER = 1, 2, 3, 4, 5, 6
+    AVAILABLE, RESERVED, OCCUPIED, NOT_AVAILABLE, BEING_SERVICED, 
+    OTHER = 1, 2, 3, 4, 5, 6
 
 
 class BookingStatus(Enum):
-    REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CHECKED_OUT, CANCELLED, ABANDONED = 1, 2, 3, 4, 5, 6, 7
+    REQUESTED, PENDING, CONFIRMED, CHECKED_IN, CHECKED_OUT, CANCELLED, 
+    ABANDONED = 1, 2, 3, 4, 5, 6, 7
 
 
 class AccountStatus(Enum):
@@ -144,7 +146,8 @@ class AccountType(Enum):
 
 
 class PaymentStatus(Enum):
-    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    UNPAID, PENDING, COMPLETED, FILLED, DECLINED, CANCELLED, ABANDONED, SETTLING, SETTLED, 
+    REFUNDED = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 class Address:
@@ -163,11 +166,6 @@ class Address:
 ```python
 from abc import ABC
 from .constants import *
-
-
-# For simplicity, we are not defining getter and setter functions. The reader can
-# assume that all class attributes are private and accessed through their respective
-# public getter methods and modified only through their public methods function.
 
 class Account:
     def __init__(self, id, password, status=AccountStatus.Active):
@@ -252,7 +250,6 @@ class Room(Search):
         self.__status = status
         self.__booking_price = price
         self.__is_smoking = is_smoking
-
         self.__keys = []
         self.__house_keeping_log = []
 
@@ -267,10 +264,6 @@ class Room(Search):
 
     def search(self, style, start_date, duration):
         None
-
-
-# return all rooms with the given style and availability
-
 
 class RoomKey:
     def __init__(self, key_id, barcode, is_active, is_master):
