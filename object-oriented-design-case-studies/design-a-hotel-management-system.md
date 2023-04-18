@@ -317,7 +317,6 @@ class RoomBooking:
         None
 
 
-# from abc import ABC, abstractmethod
 class RoomCharge(ABC):
     def __init__(self):
         self.__issue_at = datetime.date.today()
